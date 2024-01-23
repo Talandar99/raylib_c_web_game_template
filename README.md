@@ -1,4 +1,4 @@
-# raylib_c_web_game_template
+# raylib_web_game_template
 This is template for running raylib games and building them for web using emscripten
 ##### side note
 i use raylib with raygui but it's fully optional

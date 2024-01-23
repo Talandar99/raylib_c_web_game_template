@@ -6,12 +6,12 @@ i use raylib with raygui but it's fully optional
 ## How to setup for development
 - `cd setup_scripts`
 - `./setup_raylib_for_desktop.sh`
-- now youc can use `./run.sh` for running your game
+- now you can use `./run.sh` for running your game
 
 ## How to setup for web build
 - `cd setup_scripts`
 - `./setup_raylib_for_web.sh`
-- if you will try to use `./run.sh` it will cause an error. You should go bash for desktop setup for development process
+- if you will try to use `./run.sh` it will cause an error. You should use setup for desktop setup for development process
 - now you can use `./build_web.sh`
 
 ## How to build for web

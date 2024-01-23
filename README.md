@@ -30,6 +30,6 @@ i use raylib with raygui but it's fully optional
 
 ## Dependancies
 - gcc with all libraries needed to build code
-- git toolchain
+- git
 - bash
 - UNIX based operating system

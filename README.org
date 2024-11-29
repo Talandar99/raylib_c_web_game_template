@@ -64,12 +64,6 @@
      ./scripts/run_desktop.sh
    #+end_src
    - go to this address: http://0.0.0.0:8000/main.html
-** Running desktop build
-   - You can start web server with python
-   #+begin_src bash
-     ./scripts/run_desktop.sh
-   #+end_src
-   - go to this address: http://0.0.0.0:8000/main.html
 ** Dependancies
    - gcc with all libraries needed to build code
    - git

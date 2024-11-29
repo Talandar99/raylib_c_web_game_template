@@ -2,7 +2,7 @@
   This is template for running raylib games and building them for web using emscripten or desktop
 
 * Configuration
-- edit file named ~config.env~ before running scripts
+edit file named ~config.env~ before running scripts
   #+begin_src bash
     # pick platform "WEB" or "DESKTOP"
     RAYLIB_SETUP_PLATFORM="WEB"  

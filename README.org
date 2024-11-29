@@ -1,43 +1,75 @@
 * raylib_web_game_template
   This is template for running raylib games and building them for web using emscripten or desktop
 
-* Configuration
-edit file named ~config.env~ before running scripts
-  #+begin_src bash
-    # pick platform "WEB" or "DESKTOP"
-    RAYLIB_SETUP_PLATFORM="WEB"  
-    #RAYLIB_SETUP_PLATFORM="DESKTOP"  
-    
-    # set to true or false based on preferences
-    RAYLIB_USE_RAYGUI=true     # RAYGUI raygui is immediate-mode-gui library.
-    RAYLIB_USE_RPNG=true       # RPNG is library to load/save png images and manage png chunks.
-    RAYLIB_USE_RAUDIO=true     # raudio is audio library based on miniaudio.
-    RAYLIB_USE_RRES=true       # rres is file-format to package resources
-    RAYLIB_USE_NBNET=true      # NBNET is library designed to implement client-server architecture
-  #+end_src
-
-* Scripts
-  #+begin_src bash
-    # this script will pull all dependancies specified in config.env 
-    # and setup everytihing for development according to config.env settings
-    ./scripts/setup_raylib.sh  
-    
-    # this script will build game for platform specified in config.env
-    ./scripts/build.sh         
-
-    # this script will clean everytihing
-    ./scripts/clean.sh
-
-    # this script will run game. Remember to setup_raylib for DESKTOP before running it
-    ./run.sh
-  #+end_src
-
-* Running web build using python
-  You can start web server with python
-  #+begin_src bash
-    cd web_build
-    python -m http.server
-  #+end_src
+** Configuration
+ edit file named ~config.env~ before running scripts
+   #+begin_src bash
+     # pick platform "WEB" or "DESKTOP"
+     RAYLIB_SETUP_PLATFORM="WEB"  
+     #RAYLIB_SETUP_PLATFORM="DESKTOP"  
+     
+     # set to true or false based on preferences
+     RAYLIB_USE_RAYGUI=true     # RAYGUI raygui is immediate-mode-gui library.
+     RAYLIB_USE_RPNG=true       # RPNG is library to load/save png images and manage png chunks.
+     RAYLIB_USE_RAUDIO=true     # raudio is audio library based on miniaudio.
+     RAYLIB_USE_RRES=true       # rres is file-format to package resources
+     RAYLIB_USE_NBNET=true      # NBNET is library designed to implement client-server architecture
+   #+end_src
+ 
+** Scripts
+   #+begin_src bash
+     # this script will pull all dependancies specified in config.env 
+     # and setup everytihing for development according to config.env settings
+     ./scripts/setup_raylib.sh  
+     
+     # this script will build game for platform specified in config.env
+     ./scripts/build.sh         
+ 
+     # this script will clean everytihing
+     ./scripts/clean.sh
+ 
+     # this script will run game. Remember to setup_raylib for DESKTOP before running it
+     ./scripts/run_desktop.sh
+     
+     # this script will run web server for testing web build
+     ./scripts/run_desktop.sh
+ 
+   #+end_src
+** Dekstop build 
+   - change RAYLIB_SETUP_PLATFORM to "DESKTOP" in config.env
+   - setup for desktop
+   #+begin_src bash
+     ./scripts/setup_raylib.sh.sh
+   #+end_src
+   - create build
+   #+begin_src bash
+     ./scripts/build.sh
+   #+end_src
+   - or just run game
+   #+begin_src bash
+     ./scripts/run_desktop.sh
+   #+end_src
+** Web build 
+   - change RAYLIB_SETUP_PLATFORM to "WEB" in config.env
+   - setup for web
+   #+begin_src bash
+     ./scripts/setup_raylib.sh.sh
+   #+end_src
+   - create web build
+   #+begin_src bash
+     ./scripts/build.sh
+   #+end_src
+   - You can start web server with python
+   #+begin_src bash
+     ./scripts/run_desktop.sh
+   #+end_src
+   - go to this address: http://0.0.0.0:8000/main.html
+** Running desktop build
+   - You can start web server with python
+   #+begin_src bash
+     ./scripts/run_desktop.sh
+   #+end_src
+   - go to this address: http://0.0.0.0:8000/main.html
 ** Dependancies
    - gcc with all libraries needed to build code
    - git

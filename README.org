@@ -32,7 +32,7 @@
      ./scripts/run_desktop.sh
      
      # this script will run web server for testing web build
-     ./scripts/run_desktop.sh
+     ./scripts/start_web_server.sh.sh
  
    #+end_src
 ** Dekstop build 

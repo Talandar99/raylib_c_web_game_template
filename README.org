@@ -65,9 +65,9 @@
    #+end_src
    - go to this address: http://0.0.0.0:8000/main.html
 ** Dependancies
-   - gcc with all libraries needed to build code
-   - git
-   - bash
-   - make
-   - python3
-   - UNIX based operating system
+   - gcc with all libraries (needed to build code)
+   - make (needed in build)
+   - git (needed to pull dependancies)
+   - bash (needed in order to run bash scripts)
+   - python3 (for running server)
+   - LINUX based operating system (untested on other)

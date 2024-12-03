@@ -4,56 +4,57 @@
 ** Configuration
  edit file named ~config.env~ before running scripts
    #+begin_src bash
-     # pick platform "WEB" or "DESKTOP"
-     RAYLIB_SETUP_PLATFORM="WEB"  
-     #RAYLIB_SETUP_PLATFORM="DESKTOP"  
-     
-     # set to true or false based on preferences
-     RAYLIB_USE_RAYGUI=true     # RAYGUI raygui is immediate-mode-gui library.
-     RAYLIB_USE_RPNG=true       # RPNG is library to load/save png images and manage png chunks.
-     RAYLIB_USE_RAUDIO=true     # raudio is audio library based on miniaudio.
-     RAYLIB_USE_RRES=true       # rres is file-format to package resources
-     RAYLIB_USE_NBNET=true      # NBNET is library designed to implement client-server architecture
+    # pick platform "WEB" or "DESKTOP"
+    RAYLIB_SETUP_PLATFORM="DESKTOP"  
+    
+    # set to true or false based on preferences
+    # RAYGUI raygui is immediate-mode-gui library.
+    RAYLIB_USE_RAYGUI=true     
+    # RPNG is library to load/save png images and manage png chunks.
+    RAYLIB_USE_RPNG=false      
+    # raudio is audio library based on miniaudio.
+    RAYLIB_USE_RAUDIO=false    
+    # rres is file-format to package resources
+    RAYLIB_USE_RRES=false      
+    # NBNET is library designed to implement client-server architecture
+    RAYLIB_USE_NBNET=false     
    #+end_src
  
 ** Scripts
    #+begin_src bash
-     # this script will pull all dependancies specified in config.env 
-     # and setup everytihing for development according to config.env settings
-     ./scripts/setup_raylib.sh  
-     
-     # this script will build game for platform specified in config.env
-     ./scripts/build.sh         
- 
-     # this script will clean everytihing
-     ./scripts/clean.sh
- 
-     # this script will run game. Remember to setup_raylib for DESKTOP before running it
-     ./scripts/run_desktop.sh
-     
-     # this script will run web server for testing web build
-     ./scripts/start_web_server.sh.sh
- 
+    make help                     # Show this help message
+    make deps                     # Download necessary dependencies and run setup_raylib_platform
+    make setup_raylib_platform    # Setup raylib for the selected platform
+    make build                    # Build the project based on the selected platform
+    make web_run                  # Build and run web version with HTTP server
+    make desktop_run              # Build and run desktop version
+    make clean                    # Clean the build and dependencies
    #+end_src
+** Getting dependencies
+   before building anything remember to get needed libraries
+   #+begin_src bash
+    make deps                     # Download necessary dependencies and run setup_raylib_platform
+   #+end_src
+
 ** Dekstop build 
-   - change RAYLIB_SETUP_PLATFORM to "DESKTOP" in config.env
+   - change RAYLIB_SETUP_PLATFORM to "DESKTOP" in config on top of Makefile
    - setup for desktop
    #+begin_src bash
-     ./scripts/setup_raylib.sh.sh
+    make setup_raylib_platform    # Setup raylib for the selected platform
    #+end_src
    - create build
    #+begin_src bash
-     ./scripts/build.sh
+    make build                    # Build the project based on the selected platform
    #+end_src
    - or just run game
    #+begin_src bash
-     ./scripts/run_desktop.sh
+    make desktop_run              # Build and run desktop version
    #+end_src
 ** Web build 
-   - change RAYLIB_SETUP_PLATFORM to "WEB" in config.env
+   - change RAYLIB_SETUP_PLATFORM to "WEB" in config on top of Makefile
    - setup for web
    #+begin_src bash
-     ./scripts/setup_raylib.sh.sh
+    make setup_raylib_platform    # Setup raylib for the selected platform
    #+end_src
    - create web build
    #+begin_src bash
